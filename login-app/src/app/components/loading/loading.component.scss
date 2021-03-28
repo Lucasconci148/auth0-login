@@ -1,0 +1,19 @@
+@import "../../../styles.scss";
+
+.overlay {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    
+    // animation: appear 0.4s ease-out;
+    // background-color: #00000070; //color for overlay
+    background-color: #ffffff;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: -5px;
+    margin-top: 5px;
+    width: 100vw;
+    z-index: 2;
+  }

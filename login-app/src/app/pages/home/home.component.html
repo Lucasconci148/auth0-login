@@ -1,0 +1,68 @@
+<div *ngIf="!loading">
+
+    <!-- Mobile Region -->
+    <div *ngIf="isMobile">
+        <div class="mobile-triangle"></div>
+        <div class="mobile-bottom"></div>
+
+
+        <div *ngIf="loged" class="logged-content">
+
+            <img [src]="user.picture" alt="{{ user.name }}" class="picture">
+
+            <p class="text-usr">{{ user.name }}</p>
+            <p class="text-usr">{{ user.email }}</p>
+
+            <div class="example-button-row ">
+                <button mat-raised-button color="basic" (click)="logout()" style="width: 200px !important;">CERRAR SESION</button>
+            </div>
+        </div>
+
+        <div *ngIf="!loged" style="display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+            flex-direction: column;
+            margin-top: -68px;">
+
+            <p class="title">BIENVENIDO</p>
+
+            <div class="example-button-row ">
+                <button mat-raised-button color="basic" (click)="login()" style="width: 200px !important;">INICIAR SESION</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Desktop Region -->
+    <div *ngIf="!isMobile">
+        <div class="desktop__container">
+            <div class="desktop__card">
+
+                <div *ngIf="loged" class="logged-content">
+
+                    <img [src]="user.picture" alt="{{ user.name }}" class="picture">
+
+                    <p class="text-usr">{{ user.name }}</p>
+                    <p class="text-usr">{{ user.email }}</p>
+
+                    <div class="example-button-row ">
+                        <button mat-raised-button color="basic" (click)="logout()" style="width: 200px !important;">CERRAR SESION</button>
+                    </div>
+                </div>
+
+                <div *ngIf="!loged">
+
+                    <p class="title">BIENVENIDO</p>
+
+                    <div class="example-button-row ">
+                        <button mat-raised-button color="basic" (click)="login()" style="width: 200px !important;">INICIAR SESION</button>
+                    </div>
+                </div>
+        
+            </div>
+        </div> 
+    </div>
+</div>
+
+<app-loading *ngIf="loading"></app-loading>
